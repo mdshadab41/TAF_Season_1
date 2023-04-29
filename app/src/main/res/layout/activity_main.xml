@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <com.google.android.material.card.MaterialCardView
+      android:id="@+id/cardView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      app:strokeWidth="2dp"
+      app:strokeColor="@color/black"
+      app:cardCornerRadius="4dp"
+      app:cardElevation="8dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/imgHeader"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              app:srcCompat="@drawable/pl"
+              app:layout_constraintDimensionRatio="16:9"
+              app:layout_constraintTop_toTopOf="parent"/>
+
+          <TextView
+              android:id="@+id/tvTitle"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="English Premier Leage"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              android:layout_margin="8dp"
+              android:textColor="@color/black"
+              app:layout_constraintTop_toBottomOf="@id/imgHeader"
+              app:layout_constraintStart_toStartOf="parent"/>
+          <TextView
+              android:id="@+id/tvSubTitle"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Some Description "
+              android:textSize="18sp"
+              android:textStyle="normal"
+              android:layout_margin="8dp"
+              android:textColor="@color/black"
+              app:layout_constraintTop_toBottomOf="@id/tvTitle"
+              app:layout_constraintStart_toStartOf="parent"/>
+
+          <Button
+              android:id="@+id/btnLearnMore"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:backgroundTint="@color/material_dynamic_primary70"
+              android:text="Learn More"
+              android:textColor="@color/black"
+              android:layout_marginTop="6dp"
+              android:layout_marginEnd="8dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/tvSubTitle"/>
+
+
+
+
+
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        tools:itemCount="12"
+        tools:listitem="@layout/view_holder_textview"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
